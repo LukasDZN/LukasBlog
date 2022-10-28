@@ -20,7 +20,7 @@ const LayoutWrapper = ({ children }: Props) => {
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">
-                <div className="mr-4 h-28 w-28 rounded-md bg-sky-400">
+                <div className="mr-4 h-28 w-28 rounded-md fill-primary-200 transition-colors hover:fill-primary-500">
                   <Logo />
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
@@ -39,7 +39,7 @@ const LayoutWrapper = ({ children }: Props) => {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="p-1 font-medium text-gray-900 transition-colors dark:text-gray-100 dark:hover:text-primary-300 sm:p-4"
                 >
                   {link.title}
                 </Link>
