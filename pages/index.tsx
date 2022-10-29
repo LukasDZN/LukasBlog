@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import { sortedBlogPost, allCoreContent } from 'pliny/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
-// import { NewsletterForm } from 'pliny/ui/NewsletterForm'
+import { NewsletterForm } from 'pliny/ui/NewsletterForm'
 import { allBlogs } from 'contentlayer/generated'
 import type { Blog } from 'contentlayer/generated'
 
@@ -24,7 +24,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
             Latest posts
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
@@ -94,11 +94,14 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           </Link>
         </div>
       )}
-      {/* {siteMetadata.newsletter.provider && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
+      {siteMetadata.newsletter.provider && (
+        <div className="flex scale-75 items-center justify-center pt-10">
+          <NewsletterForm
+            title="Get informed about latest projects"
+            // apiUrl="http://eepurl.com/icv8br"
+          />
         </div>
-      )} */}
+      )}
     </>
   )
 }
