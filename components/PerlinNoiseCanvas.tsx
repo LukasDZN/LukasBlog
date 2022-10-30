@@ -2,7 +2,7 @@ import React from 'react'
 // import { ReactNode } from 'react'
 import p5 from 'p5'
 
-export default function MyComp() {
+export default function PerlinNoiseCanvas() {
   React.useEffect(() => {
     function Particle() {
       this.pos = p5.createVector(Math.random(), Math.random())
