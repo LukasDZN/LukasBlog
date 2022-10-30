@@ -54,13 +54,28 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
+      theme: 'preferred_color_scheme',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`
       // please provide a link below to your custom theme css file.
       // example: https://giscus.app/themes/custom_example.css
       themeURL: '',
+      inputPosition: 'top',
+      lang: 'en',
+      // chunk-ZJUIFPD4.js
+      // script.setAttribute("data-repo", repo);
+      // script.setAttribute("data-repo-id", repositoryId);
+      // script.setAttribute("data-category", category);
+      // script.setAttribute("data-category-id", categoryId);
+      // script.setAttribute("data-mapping", mapping);
+      // script.setAttribute("data-reactions-enabled", reactions);
+      // script.setAttribute("data-emit-metadata", metadata);
+      // script.setAttribute("data-input-position", inputPosition);
+      // script.setAttribute("data-lang", lang);
+      // script.setAttribute("data-theme", commentsTheme);
+      // script.setAttribute("crossorigin", "anonymous");
+      // script.async = true;
     },
   },
   // search: {

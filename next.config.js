@@ -6,21 +6,25 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app https://app.posthog.com/static/array.js;
+  default-src 'self' https://giscus.app;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://app.posthog.com https://giscus.app;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
   font-src 'self';
-  frame-src giscus.app;
+  frame-src 'self' https://giscus.app;
+  child-src 'self' https://giscus.app;
+  frame-ancestors 'self' https://giscus.app;
 `
+
+console.log(ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim())
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   {
     key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\n/g, ''),
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
   {
@@ -28,18 +32,19 @@ const securityHeaders = [
     value: 'strict-origin-when-cross-origin',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
-  {
-    key: 'X-Frame-Options',
-    value: 'DENY',
-  },
+  // Update: This is now obsolete and replaced by frame-ancestors
+  // {
+  //   key: 'X-Frame-Options',
+  //   value: 'DENY',
+  // },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   {
-    key: 'X-Content-Type-Options',
+    key: 'Content-Type-Options',
     value: 'nosniff',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control
   {
-    key: 'X-DNS-Prefetch-Control',
+    key: 'DNS-Prefetch-Control',
     value: 'on',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
@@ -68,7 +73,7 @@ module.exports = () => {
     async headers() {
       return [
         {
-          source: '/(.*)',
+          source: '/:path*',
           headers: securityHeaders,
         },
       ]
