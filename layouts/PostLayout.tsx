@@ -119,7 +119,12 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                   id="comment"
                 >
                   {!loadComments && (
-                    <button onClick={() => setLoadComments(true)}>Load Comments</button>
+                    <button
+                      className="rounded-md p-2 text-gray-500 shadow-md shadow-primary-500 outline outline-1 outline-gray-400 hover:text-black hover:outline-black dark:hover:text-white dark:hover:outline-white"
+                      onClick={() => setLoadComments(true)}
+                    >
+                      Load Comments
+                    </button>
                   )}
                   {loadComments && <Comments commentsConfig={siteMetadata.comments} slug={slug} />}
                 </div>
