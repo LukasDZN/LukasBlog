@@ -51,12 +51,14 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
             {siteMetadata.comments && (
-              <div
-                className="animate-pulse pt-6 pb-6 text-center text-gray-700 dark:text-gray-300"
-                id="comment"
-              >
+              <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300" id="comment">
                 {!loadComments && (
-                  <button onClick={() => setLoadComments(true)}>Load Comments</button>
+                  <button
+                    className="rounded-md p-2 text-gray-500 shadow-md shadow-primary-500 outline outline-1 outline-gray-400 hover:text-black hover:outline-black dark:hover:text-white dark:hover:outline-white"
+                    onClick={() => setLoadComments(true)}
+                  >
+                    Load Comments
+                  </button>
                 )}
                 {loadComments && <Comments commentsConfig={siteMetadata.comments} slug={slug} />}
               </div>

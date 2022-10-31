@@ -9,6 +9,16 @@ import { NewsletterForm } from 'pliny/ui/NewsletterForm'
 import { allBlogs } from 'contentlayer/generated'
 import type { Blog } from 'contentlayer/generated'
 
+// import PerlinNoiseCanvas from '@/components/PerlinNoiseCanvas'
+import dynamic from 'next/dynamic'
+
+const PerlinNoiseCanvas = dynamic(
+  () => import('@/components/PerlinNoiseCanvas').then((mod) => mod.default),
+  {
+    ssr: false,
+  }
+)
+
 const MAX_DISPLAY = 5
 
 export const getStaticProps = async () => {
@@ -24,12 +34,33 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
+          <div>
+            <div className="mb-16 flex flex-auto flex-wrap justify-center gap-4">
+              <div className="max-w-sm">
+                <h1 className="mb-2 text-left text-3xl font-extrabold leading-9 tracking-tight text-blue-500 dark:text-blue-200 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
+                  Welcome
+                </h1>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Hi, Passionate about automating redundant work by designing and creating intuitive
+                  tools. Also love to explore AI innovations
+                  (https://simonwillison.net/2022/Aug/29/stable-diffusion/), travel, read, study
+                  philosophy, do water sports, cook. I'm a developer With a background in Interested
+                  in
+                </p>
+              </div>
+              <div className="min-w-sm max-w-sm">
+                <PerlinNoiseCanvas />
+              </div>
+            </div>
+          </div>
+          <h1 className="text-xl font-extrabold leading-9 tracking-tight text-gray-500 dark:text-gray-400 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
             Latest posts
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
-          </p>
+          {siteMetadata.description && (
+            <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+              {siteMetadata.description}
+            </p>
+          )}
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}

@@ -16,7 +16,7 @@ const LayoutWrapper = ({ children }: Props) => {
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
-        <header className="flex items-center justify-between py-10">
+        <header className="sticky top-0 z-20 flex items-center justify-between py-10 backdrop-blur-lg backdrop-saturate-150 backdrop-filter">
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">
@@ -25,7 +25,7 @@ const LayoutWrapper = ({ children }: Props) => {
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
                   <div className="hidden h-6 text-2xl font-extralight tracking-widest sm:block">
-                    <span className="font-bold">
+                    <span className="font-mono font-bold">
                       {siteMetadata.headerTitle.split('.')[0] + '.'}
                     </span>
                     <span>{siteMetadata.headerTitle.split('.')[1]}</span>
