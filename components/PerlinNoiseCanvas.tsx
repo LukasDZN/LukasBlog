@@ -55,7 +55,7 @@ export default function PerlinNoiseCanvas() {
       this.pos = p5.createVector(Math.random(), Math.random())
       this.vel = p5.createVector(0, 0)
       this.acc = p5.createVector(0, 0)
-      this.maxspeed = 1.5
+      this.maxspeed = 1.25
       this.prevPos = this.pos.copy()
       this.follow = function (vectors) {
         const x = Math.floor(this.pos.x / scl)
@@ -113,7 +113,14 @@ export default function PerlinNoiseCanvas() {
     // p5.background(220)
   }
 
+  let drawIterationCount = 0
+
   function draw(p5) {
+    if (drawIterationCount > 2500) {
+      return
+    }
+    console.log(drawIterationCount)
+    drawIterationCount++
     let yoff = 0
     for (let y = 0; y < rows; y++) {
       let xoff = 0

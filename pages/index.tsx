@@ -48,7 +48,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                   in
                 </p>
               </div>
-              <div className="min-w-sm max-w-sm">
+              <div className="max-w-sm">
                 <PerlinNoiseCanvas />
               </div>
             </div>
