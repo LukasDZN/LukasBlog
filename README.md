@@ -1,5 +1,7 @@
 # Introduction
 
+Personal blog. 
 
+# Resources
 
-https://github.com/timlrx/tailwind-nextjs-starter-blog
+Template used: https://github.com/timlrx/tailwind-nextjs-starter-blog
