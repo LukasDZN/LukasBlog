@@ -30,7 +30,7 @@ export default function PerlinNoiseCanvas() {
 
   function setup(p5, canvasParentRef) {
     // const parentDivWidth = document.querySelector('#PerlinNoiseCanvasParent').scrollWidth
-    p5.createCanvas(430, 250).parent(canvasParentRef) // Assign parent div (https://p5js.org/reference/#/p5.Element/parent)
+    p5.createCanvas(430, 380).parent(canvasParentRef) // Assign parent div (https://p5js.org/reference/#/p5.Element/parent)
     // p5 js canvas as a background https://stackoverflow.com/questions/46874608/how-to-put-p5-canvas-into-our-div-background
     // p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef)
 

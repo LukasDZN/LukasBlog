@@ -37,22 +37,43 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             <div className="mb-16 flex flex-auto flex-wrap justify-center gap-4">
               <div className="min-w-0 max-w-sm">
                 <h1 className="mb-2 text-left text-3xl font-extrabold leading-9 tracking-tight text-blue-500 dark:text-blue-200 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
-                  Welcome
+                  Hi, I'm Lukas - welcome to my blog.
                 </h1>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Hi, Passionate about automating redundant work by designing and creating intuitive
-                  tools. Also love to explore AI innovations
-                  <a
-                    className="textLink"
-                    href="https://simonwillison.net/2022/Aug/29/stable-diffusion/"
-                  >
-                    link
-                  </a>
-                  travel, read, study philosophy, do water sports, cook. I'm a developer With a
-                  background in Interested in
-                </p>
+                <div className="introductionParagraphParent text-gray-500 dark:text-gray-400">
+                  <p>
+                    I'm a <strong>self-taught web developer</strong> and an aspiring{' '}
+                    <a
+                      className="textLink"
+                      href="https://www.indiehackers.com/about"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      indie hacker
+                    </a>
+                    .
+                  </p>
+                  <p>
+                    I'm passionate about automating redundant work by creating intuitive tools
+                    (check out my{' '}
+                    <Link href={`/projects`} className="textLink">
+                      projects
+                    </Link>
+                    ).
+                  </p>
+                  <p>
+                    I'm also interested in philosophy, AI and the future of automation (
+                    <Link href={`/about`} className="textLink">
+                      read more
+                    </Link>{' '}
+                    about me).
+                  </p>
+                  <p>
+                    If you'd like to share anything at all - feel free to get in touch via email or
+                    LinkedIn!
+                  </p>
+                </div>
               </div>
-              <div className="h-[250px] w-[430px] overflow-hidden">
+              <div className="h-[380px] w-[430px] overflow-hidden">
                 <PerlinNoiseCanvas />
               </div>
             </div>
@@ -67,7 +88,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           )}
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && 'No posts found.'}
+          {!posts.length && 'No posts yet :)'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
             return (

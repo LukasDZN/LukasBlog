@@ -47,6 +47,16 @@ module.exports = {
           900: '#3B74FF',
         },
       },
+      fontSize: {
+        '2xl': [
+          '1.125rem',
+          {
+            lineHeight: '2rem',
+            // letterSpacing: '-0.01em',
+            // fontWeight: '500',
+          },
+        ],
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
