@@ -21,7 +21,7 @@ export default function Footer() {
           <div>{` • `}</div>
           <Link href="/">{siteMetadata.title}</Link> */}
         </div>
-        <div className="mb-2 text-xs font-extralight text-gray-500 dark:text-gray-400">
+        <div className="mb-3 text-xs font-extralight text-gray-900 dark:text-gray-400">
           Big thanks to{' '}
           <a
             className="textLink"

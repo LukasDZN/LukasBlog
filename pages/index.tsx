@@ -68,8 +68,15 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                     about me).
                   </p>
                   <p>
-                    If you'd like to share anything at all - feel free to get in touch via email or
-                    LinkedIn!
+                    If you'd like to share anything at all - feel free to get in touch via{' '}
+                    <Link href={`mailto:${siteMetadata.email}`} className="textLink">
+                      email
+                    </Link>{' '}
+                    or{' '}
+                    <Link href={siteMetadata.linkedin} className="textLink">
+                      LinkedIn
+                    </Link>
+                    !
                   </p>
                 </div>
               </div>
@@ -88,7 +95,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           )}
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && 'No posts yet :)'}
+          {!posts.length && <p className="mt-2">No posts yet :)</p>}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
             return (
@@ -151,7 +158,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         </div>
       )}
       {siteMetadata.newsletter.provider && (
-        <div className="flex items-center justify-center pt-10 sm:scale-75">
+        <div className="flex items-center justify-center pt-10 sm:scale-[0.85]">
           <NewsletterForm
             title="Get informed about latest projects"
             // apiUrl="http://eepurl.com/icv8br"
