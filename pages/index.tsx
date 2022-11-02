@@ -130,7 +130,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         </div>
       )}
       {siteMetadata.newsletter.provider && (
-        <div className="flex scale-75 items-center justify-center pt-10">
+        <div className="flex items-center justify-center pt-10 sm:scale-75">
           <NewsletterForm
             title="Get informed about latest projects"
             // apiUrl="http://eepurl.com/icv8br"

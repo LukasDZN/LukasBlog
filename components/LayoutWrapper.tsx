@@ -24,7 +24,7 @@ const LayoutWrapper = ({ children }: Props) => {
                   <Logo />
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-extralight tracking-widest sm:block">
+                  <div className="h-6 text-xl font-extralight tracking-widest sm:text-2xl">
                     <span className="font-mono font-bold">
                       {siteMetadata.headerTitle.split('.')[0] + '.'}
                     </span>
