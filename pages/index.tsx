@@ -52,7 +52,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                   background in Interested in
                 </p>
               </div>
-              <div className="overflow-hidden">
+              <div className="h-[250px] w-[430px] overflow-hidden">
                 <PerlinNoiseCanvas />
               </div>
             </div>
