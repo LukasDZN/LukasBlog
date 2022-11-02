@@ -22,10 +22,11 @@ export default function PerlinNoiseCanvas() {
 
   const flowField = []
 
-  //   function windowResized() {
-  //     p5.resizeCanvas(p5.windowWidth, p5.windowHeight)
-  //     console.log('Resized canvas event')
-  //   }
+  // Note: event doesn't fire
+  // function windowResized() {
+  //   // p5.resizeCanvas(p5.windowWidth, p5.windowHeight)
+  //   console.log('Resized canvas event')
+  // }
 
   function setup(p5, canvasParentRef) {
     // const parentDivWidth = document.querySelector('#PerlinNoiseCanvasParent').scrollWidth
@@ -119,7 +120,7 @@ export default function PerlinNoiseCanvas() {
     if (drawIterationCount > 2500) {
       return
     }
-    console.log(drawIterationCount)
+    // console.log(drawIterationCount)
     drawIterationCount++
     let yoff = 0
     for (let y = 0; y < rows; y++) {

@@ -9,15 +9,14 @@ import { NewsletterForm } from 'pliny/ui/NewsletterForm'
 import { allBlogs } from 'contentlayer/generated'
 import type { Blog } from 'contentlayer/generated'
 
-// import PerlinNoiseCanvas from '@/components/PerlinNoiseCanvas'
-import dynamic from 'next/dynamic'
-
-const PerlinNoiseCanvas = dynamic(
-  () => import('@/components/PerlinNoiseCanvas').then((mod) => mod.default),
-  {
-    ssr: false,
-  }
-)
+import PerlinNoiseCanvas from '@/components/PerlinNoiseCanvas'
+// import dynamic from 'next/dynamic'
+// const PerlinNoiseCanvas = dynamic(
+//   () => import('@/components/PerlinNoiseCanvas').then((mod) => mod.default),
+//   {
+//     ssr: false,
+//   }
+// )
 
 const MAX_DISPLAY = 5
 
@@ -36,19 +35,24 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <div>
             <div className="mb-16 flex flex-auto flex-wrap justify-center gap-4">
-              <div className="max-w-sm">
+              <div className="min-w-0 max-w-sm">
                 <h1 className="mb-2 text-left text-3xl font-extrabold leading-9 tracking-tight text-blue-500 dark:text-blue-200 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
                   Welcome
                 </h1>
                 <p className="text-gray-500 dark:text-gray-400">
                   Hi, Passionate about automating redundant work by designing and creating intuitive
                   tools. Also love to explore AI innovations
-                  (https://simonwillison.net/2022/Aug/29/stable-diffusion/), travel, read, study
-                  philosophy, do water sports, cook. I'm a developer With a background in Interested
-                  in
+                  <a
+                    className="textLink"
+                    href="https://simonwillison.net/2022/Aug/29/stable-diffusion/"
+                  >
+                    link
+                  </a>
+                  travel, read, study philosophy, do water sports, cook. I'm a developer With a
+                  background in Interested in
                 </p>
               </div>
-              <div className="max-w-sm">
+              <div className="overflow-hidden">
                 <PerlinNoiseCanvas />
               </div>
             </div>

@@ -18,6 +18,10 @@
   @apply my-5;
 }
 
+a.textLink {
+  @apply text-blue-500 dark:text-blue-200 underline underline-offset-2 hover:text-blue-300 dark:hover:text-blue-400;
+}
+
 /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
