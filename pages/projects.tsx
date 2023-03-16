@@ -1,7 +1,7 @@
-import siteMetadata from '@/data/siteMetadata'
-import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
+import projectsData from '@/data/projectsData'
+import siteMetadata from '@/data/siteMetadata'
 
 export default function Projects() {
   return (
@@ -13,7 +13,8 @@ export default function Projects() {
             Projects
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            A list of projects that I have been working on recently.
+            A list of projects that I have been working on recently. <br></br>Newest projects are at
+            the top.
           </p>
         </div>
         <div className="container py-12">

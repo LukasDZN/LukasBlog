@@ -1,10 +1,28 @@
 const projectsData = [
   {
-    title: 'Markdown header sorter',
-    description: `Copy and paste your text into the editor tool to sort your markdown sections alphabetically. Sort your entire text or select a single header level (#, ##, ...).
+    title: 'Something bigger',
+    description: `:)`,
+    imgSrc: '/static/images/work-in-progress-logo-large.png',
+    // href: 'https://github.com/LukasDZN/chrome-theme-1',
+  },
+  {
+    title: 'Unique google chrome theme',
+    description: `A custom theme for chromium browsers.`,
+    imgSrc: '/static/images/work-in-progress-logo-large.png',
+    // href: 'https://github.com/LukasDZN/chrome-theme-1',
+  },
+  {
+    title: 'WhatSound',
+    description: `A chrome browser extension that changes the default WhatsApp Web message notification sound.`,
+    imgSrc: '/static/images/whatsound_screenshot.jpg',
+    href: 'https://chrome.google.com/webstore/detail/whatsound-change-whatsapp/clcpgcomlfaihpgdeokbjkddfjeddnfg',
+  },
+  {
+    title: 'Redmine task notifications',
+    description: `A chrome browser extension for creating Redmine (project management system) status alerts.
     [Vanilla JS]`,
-    imgSrc: '/static/images/markdown-header-sorter-logo-android-chrome-512x512.png',
-    href: 'https://lukasdzn.github.io/Markdown-header-sorter/',
+    imgSrc: '/static/images/redmine_task_notification_screenshot.jpg',
+    href: 'https://github.com/LukasDZN/redmineTaskAlertChromeExtension',
   },
   {
     title: 'Markdown internal link checker',
@@ -14,30 +32,18 @@ const projectsData = [
     href: 'https://github.com/LukasDZN/markdownUrlChecker',
   },
   {
+    title: 'Markdown header sorter',
+    description: `Copy and paste your text into the editor tool to sort your markdown sections alphabetically. Sort your entire text or select a single header level (#, ##, ...).
+    [Vanilla JS]`,
+    imgSrc: '/static/images/markdown-header-sorter-logo-android-chrome-512x512.png',
+    href: 'https://lukasdzn.github.io/Markdown-header-sorter/',
+  },
+  {
     title: 'This blog',
     description: `[TypeScript, Next JS]`,
     imgSrc: '/static/images/website-logo-and-title-large.png',
     href: 'https://github.com/LukasDZN/LukasBlog',
   },
-  {
-    title: 'Redmine task notifications',
-    description: `Chrome extension for creating Redmine (project management system) status alerts.
-    [Vanilla JS]`,
-    imgSrc: '/static/images/work-in-progress-logo-large.png',
-    href: 'https://github.com/LukasDZN/redmineTaskAlertChromeExtension',
-  },
-  {
-    title: 'Google chrome theme',
-    description: `A custom theme for chromium browsers.`,
-    imgSrc: '/static/images/work-in-progress-logo-large.png',
-    href: 'https://github.com/LukasDZN/chrome-theme-1',
-  },
-  // {
-  //   title: 'Example title',
-  //   description: `Example description`,
-  //   imgSrc: '/static/images/time-machine.jpg',
-  //   href: '/blog/example-internal-url',
-  // },
 ]
 
 export default projectsData
