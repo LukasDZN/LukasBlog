@@ -22,7 +22,7 @@ const projectsData = [
     description: `A chrome browser extension for creating Redmine (project management system) status alerts.
     [Vanilla JS]`,
     imgSrc: '/static/images/redmine_task_notification_screenshot.jpg',
-    href: 'https://github.com/LukasDZN/redmineTaskAlertChromeExtension',
+    href: 'https://chrome.google.com/webstore/detail/redmine-task-field-alert/mnfepndkbhopejlfnndnincpcgehjdic',
   },
   {
     title: 'Markdown internal link checker',
