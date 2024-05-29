@@ -2,12 +2,12 @@ import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import { formatDate } from 'pliny/utils/formatDate'
-import { sortedBlogPost, allCoreContent } from 'pliny/utils/contentlayer'
+import type { Blog } from 'contentlayer/generated'
+import { allBlogs } from 'contentlayer/generated'
 import { InferGetStaticPropsType } from 'next'
 import { NewsletterForm } from 'pliny/ui/NewsletterForm'
-import { allBlogs } from 'contentlayer/generated'
-import type { Blog } from 'contentlayer/generated'
+import { allCoreContent, sortedBlogPost } from 'pliny/utils/contentlayer'
+import { formatDate } from 'pliny/utils/formatDate'
 
 import PerlinNoiseCanvas from '@/components/PerlinNoiseCanvas'
 // import dynamic from 'next/dynamic'
@@ -32,7 +32,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <div>
             <div className="mb-16 flex flex-auto flex-wrap justify-center gap-4">
               <div className="min-w-0 max-w-sm">
@@ -41,7 +41,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                 </h1>
                 <div className="introductionParagraphParent text-gray-500 dark:text-gray-400">
                   <p>
-                    I'm a <strong>self-taught web developer</strong> and an aspiring{' '}
+                    I'm a <strong>self-taught web developer</strong> and an aspiring entrepreneur /{' '}
                     <a
                       className="textLink"
                       href="https://www.indiehackers.com/about"
@@ -53,12 +53,12 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                     .
                   </p>
                   <p>
-                    I'm passionate about automating redundant work by creating intuitive tools
-                    (check out my{' '}
+                    I'm passionate about creating intuitive tools and startup communities - check
+                    out my{' '}
                     <Link href={`/projects`} className="textLink">
                       projects
                     </Link>
-                    ).
+                    .
                   </p>
                   <p>
                     I'm also interested in philosophy, AI and the future of automation (
