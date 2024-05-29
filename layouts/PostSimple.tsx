@@ -48,10 +48,10 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
+              <div className="prose max-w-none pb-8 pt-10 dark:prose-dark">{children}</div>
             </div>
             {siteMetadata.comments && (
-              <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300" id="comment">
+              <div className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300" id="comment">
                 {!loadComments && (
                   <button
                     className="rounded-md p-2 text-gray-500 shadow-md shadow-primary-500 outline outline-1 outline-gray-400 hover:text-black hover:outline-black dark:hover:text-white dark:hover:outline-white"
